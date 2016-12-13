@@ -12,7 +12,9 @@ CREATE TABLE admin_widgets (
     description TEXT,
     icon VARCHAR(100),
     link VARCHAR(250),
-    roles_ids INTEGER[],
+    call_to_action varchar(100),
+    type varchar(100),
+    role_ids INTEGER[],
     created TIMESTAMP NOT NULL default CURRENT_TIMESTAMP,
     modified TIMESTAMP
 );
