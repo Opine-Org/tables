@@ -19,4 +19,4 @@ CREATE TABLE admin_widgets (
     modified TIMESTAMP
 );
 
-CREATE TRIGGER update_widget_modtime BEFORE UPDATE ON widgets FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
+CREATE TRIGGER update_widget_modtime BEFORE UPDATE ON admin_widgets FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
