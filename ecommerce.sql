@@ -6,7 +6,21 @@ BEGIN
 END;
 $$ language 'plpgsql';
 
-CREATE TABLE ecommerce_cart_items (
+CREATE TABLE ecommerce_orders ();
+
+CREATE TABLE ecommerce_transactions ();
+
+CREATE TABLE ecommerce_sales_reps ();
+
+CREATE TABLE ecommerce_customers ();
+
+CREATE TABLE ecommerce_product_categories ();
+
+CREATE TABLE ecommerce_products_logical ();
+
+CREATE TABLE ecommerce_products_physical ();
+
+CREATE TABLE ecommerce_order_items (
     id SERIAL NOT NULL primary key,
     physical_product_id integer,
     session_id char(36),
@@ -15,4 +29,4 @@ CREATE TABLE ecommerce_cart_items (
     modified TIMESTAMP
 );
 
-CREATE TRIGGER update_ecommerce_cart_items_modtime BEFORE UPDATE ON ecommerce_cart_items FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
+CREATE TRIGGER update_ecommerce_order_items_modtime BEFORE UPDATE ON ecommerce_order_items FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
